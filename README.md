@@ -183,7 +183,7 @@ Warna utama yang digunakan:
 
 ## 📝 Lisensi
 
-© 2025 PT Intimart Elang Perkasa · I.W. Group. All rights reserved.
+© 2026 PT Intimart Elang Perkasa · I.W. Group. All rights reserved.
 
 ---
 

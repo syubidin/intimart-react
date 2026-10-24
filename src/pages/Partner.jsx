@@ -4,19 +4,42 @@ import { CONTACT, LINES } from '../data';
 import { Reveal, Field, waLink, useTitle } from '../lib.jsx';
 
 const MINAT = [
-  ['metagrow-agen', 'Agen Telur MetaGrow'],
-  ['metagrow', 'Mitra Sembako MetaGrow (retail/grosir)'],
-  ['metamart', 'Mitra Metamart (minimarket & ATK)'],
-  ['metafashion', 'Mitra MetaFashion'],
-  ['lainnya', 'Kerja sama lainnya'],
+  ['metagrow-agen', 'Agen Telur & Sembako MetaGrow'],
+  ['metagrow', 'Mitra Sembako MetaGrow (Retail / Grosir)'],
+  ['metamart', 'Mitra Metamart (Minimarket & ATK)'],
+  ['metafashion', 'Mitra MetaFashion (Pakaian Ex-Import)'],
+  ['lainnya', 'Kerja sama korporasi / lainnya'],
 ];
 const WILAYAH = [['Jabodetabek', 0], ['Purwakarta', 1], ['Lainnya', 0]];
 
+// Professional SVG Icons
+const PriceIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+  </svg>
+);
+const TruckIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+  </svg>
+);
+const BoxIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+  </svg>
+);
+const HandshakeIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+);
+
 const BENEFITS = [
-  { icon: '💰', title: 'Harga Kompetitif', desc: 'Dapatkan harga grosir langsung dari sumber.' },
-  { icon: '🚚', title: 'Pengiriman Terjangkau', desc: 'Jaringan pengiriman ke berbagai wilayah.' },
-  { icon: '📦', title: 'Stok Terjamin', desc: 'Ketersediaan produk yang konsisten.' },
-  { icon: '🤝', title: 'Dukungan Penuh', desc: 'Tim kami siap mendampingi mitra.' },
+  { icon: <PriceIcon />, title: 'Harga Grosir Produsen', desc: 'Dapatkan harga kompetitif langsung dari produsen utama.' },
+  { icon: <TruckIcon />, title: 'Logistik Terjadwal', desc: 'Jaringan distribusi terpercaya di Jabodetabek & Purwakarta.' },
+  { icon: <BoxIcon />, title: 'Kualitas & Stok Terjamin', desc: 'Pasokan stabil untuk mendukung kelancaran usaha Anda.' },
+  { icon: <HandshakeIcon />, title: 'Pendampingan Berkelanjutan', desc: 'Dukungan tim profesional dari awal pendaftaran hingga operasional.' },
 ];
 
 export default function Partner() {
@@ -42,10 +65,10 @@ export default function Partner() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero Strip with Partnership Trust Card */}
       <div style={{
         background: 'linear-gradient(135deg, var(--blue-d) 0%, var(--blue) 100%)',
-        padding: 'clamp(3rem,7vw,5.5rem) 0 clamp(4rem,10vw,7rem)',
+        padding: 'clamp(3.5rem,7vw,5.5rem) 0 clamp(4.5rem,10vw,7.5rem)',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -56,38 +79,113 @@ export default function Partner() {
           borderRadius: '50%', pointerEvents: 'none',
         }} aria-hidden="true" />
         <div className="wrap">
-          <Reveal>
-            <p className="eyebrow" style={{ color: 'var(--yellow)' }}>Program Kemitraan</p>
-            <h1 style={{ color: '#fff', maxWidth: '14ch' }}>Bergabung & Tumbuh Bersama Kami</h1>
-            <p style={{ color: 'rgba(255,255,255,.78)', maxWidth: '50ch', marginTop: '1rem', fontSize: '1.1rem', lineHeight: 1.75 }}>
-              Isi formulir singkat, tim kami buka WhatsApp dengan pesan yang sudah terisi. Tinggal kirim.
-            </p>
-          </Reveal>
+          <div className="split top">
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'var(--yellow)' }}>Program Kemitraan</p>
+              <h1 style={{ color: '#fff', maxWidth: '14ch' }}>Bergabung &amp; Tumbuh Bersama Kami</h1>
+              <p style={{ color: 'rgba(255,255,255,.82)', maxWidth: '52ch', marginTop: '1rem', fontSize: '1.1rem', lineHeight: 1.75 }}>
+                Peluang kemitraan dan keagenan resmi untuk semua unit usaha: sembako MetaGrow, minimarket &amp; ATK Metamart, serta fesyen MetaFashion.
+              </p>
+              <p style={{ color: 'rgba(255,255,255,.7)', maxWidth: '50ch', fontSize: '.95rem' }}>
+                Isi formulir di bawah dan data Anda akan langsung terformat rapi di WhatsApp customer service kami.
+              </p>
+            </Reveal>
+
+            {/* Visual Hero Card */}
+            <Reveal>
+              <div style={{
+                background: 'rgba(255,255,255,.12)',
+                border: '1.5px solid rgba(255,255,255,.22)',
+                borderRadius: 24,
+                padding: '1.8rem 2rem',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                color: '#fff',
+                boxShadow: 'var(--shadow-xl)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.2rem',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{
+                    background: 'var(--yellow)',
+                    color: 'var(--blue-d)',
+                    fontWeight: 800,
+                    fontSize: '.82rem',
+                    padding: '.4rem 1.1rem',
+                    borderRadius: 999,
+                    letterSpacing: '.04em',
+                    boxShadow: '0 4px 14px rgba(251,191,15,.35)',
+                  }}>
+                    Peluang Usaha Terbuka
+                  </span>
+                  <span style={{ fontSize: '.85rem', color: '#fff', fontWeight: 700 }}>
+                    100+ Mitra Aktif
+                  </span>
+                </div>
+                <div>
+                  <b style={{ color: '#fff', fontSize: '1.18rem', display: 'block', marginBottom: '.3rem' }}>
+                    Sinergi Multi-Lini Bisnis
+                  </b>
+                  <p style={{ color: 'rgba(255,255,255,.85)', fontSize: '.92rem', margin: 0, lineHeight: 1.6 }}>
+                    Dukungan pasokan teratur dengan keuntungan kompetitif, garansi kualitas, dan pembinaan bisnis berkelanjutan.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '.6rem', flexWrap: 'wrap' }}>
+                  {LINES.map((l) => (
+                    <span key={l.slug} style={{
+                      background: 'rgba(255,255,255,.15)',
+                      padding: '.3rem .8rem',
+                      borderRadius: 999,
+                      fontSize: '.82rem',
+                      fontWeight: 700,
+                      color: '#fff',
+                    }}>
+                      ✓ {l.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </div>
 
-      <section className="wrap" style={{ marginTop: 'clamp(-2rem,-4vw,-3rem)' }}>
+      <section className="wrap" style={{ marginTop: 'clamp(-2rem,-4vw,-3rem)', paddingBottom: '5rem' }}>
         <div className="split top">
           {/* Left: benefits + line cards */}
           <Reveal>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {/* Benefit grid */}
+              {/* Benefit grid with Professional Icons */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
                 gap: '1rem',
               }}>
                 {BENEFITS.map(({ icon, title, desc }) => (
                   <div key={title} style={{
                     background: '#fff',
                     border: '1.5px solid var(--border)',
-                    borderRadius: 16,
-                    padding: '1.2rem',
+                    borderRadius: 18,
+                    padding: '1.4rem',
                     boxShadow: 'var(--shadow-sm)',
+                    transition: 'transform .2s ease, box-shadow .2s ease, border-color .2s ease',
                   }}>
-                    <div style={{ fontSize: '1.6rem', marginBottom: '.4rem' }}>{icon}</div>
-                    <b style={{ color: 'var(--ink)', display: 'block', marginBottom: '.25rem', fontSize: '.95rem' }}>{title}</b>
-                    <p style={{ color: 'var(--muted)', fontSize: '.85rem', margin: 0 }}>{desc}</p>
+                    <div style={{
+                      width: 44,
+                      height: 44,
+                      borderRadius: 12,
+                      background: 'var(--soft)',
+                      color: 'var(--blue)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '.9rem',
+                    }}>
+                      {icon}
+                    </div>
+                    <b style={{ color: 'var(--ink)', display: 'block', marginBottom: '.35rem', fontSize: '.98rem' }}>{title}</b>
+                    <p style={{ color: 'var(--muted)', fontSize: '.88rem', margin: 0, lineHeight: 1.55 }}>{desc}</p>
                   </div>
                 ))}
               </div>
@@ -95,22 +193,23 @@ export default function Partner() {
               {/* Line cards */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '.8rem' }}>
                 <p style={{ fontWeight: 700, fontSize: '.85rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.06em' }}>
-                  Tersedia untuk semua lini:
+                  Pilihan Kemitraan Tersedia:
                 </p>
                 {LINES.map((l) => (
                   <div key={l.slug} style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '.8rem',
-                    padding: '.8rem 1rem',
-                    background: 'var(--soft)',
-                    borderRadius: 12,
-                    border: '1px solid var(--border)',
+                    gap: '1rem',
+                    padding: '1rem 1.25rem',
+                    background: '#fff',
+                    borderRadius: 16,
+                    border: '1.5px solid var(--border)',
+                    boxShadow: 'var(--shadow-sm)',
                   }}>
-                    <img src={l.logo} alt={l.name} style={{ height: 28, width: 'auto' }} />
-                    <div>
-                      <b style={{ fontSize: '.95rem' }}>{l.name}</b>
-                      <p style={{ color: 'var(--muted)', fontSize: '.82rem', margin: 0 }}>{l.tag}</p>
+                    <img src={l.logo} alt={l.name} style={{ height: 32, width: 'auto', objectFit: 'contain' }} />
+                    <div style={{ minWidth: 0 }}>
+                      <b style={{ fontSize: '1rem', color: 'var(--ink)' }}>{l.name}</b>
+                      <p style={{ color: 'var(--muted)', fontSize: '.85rem', margin: 0 }}>{l.tag}</p>
                     </div>
                   </div>
                 ))}
@@ -124,74 +223,71 @@ export default function Partner() {
               className="form card"
               onSubmit={submit}
               noValidate
-              style={{ boxShadow: 'var(--shadow-xl)', border: '1px solid var(--border)' }}
+              style={{ boxShadow: 'var(--shadow-xl)', border: '1.5px solid var(--border)', background: '#fff' }}
             >
-              <div style={{ marginBottom: '.5rem' }}>
-                <h2 style={{ fontSize: '1.4rem', marginBottom: '.3rem' }}>Formulir Kemitraan</h2>
-                <p style={{ color: 'var(--muted)', fontSize: '.88rem' }}>
-                  Isi dan klik "Lanjut ke WhatsApp" — pesan langsung terkirim.
+              <div style={{ marginBottom: '.8rem' }}>
+                <h2 style={{ fontSize: '1.5rem', marginBottom: '.3rem' }}>Formulir Kemitraan</h2>
+                <p style={{ color: 'var(--muted)', fontSize: '.9rem' }}>
+                  Isi data Anda dan klik "Lanjut ke WhatsApp" — pesan langsung terformat otomatis.
                 </p>
               </div>
 
-              <Field id="nama" label="Nama lengkap *" error={err.nama}>
+              <Field id="nama" label="Nama lengkap atau Usaha *" error={err.nama}>
                 <input
                   id="nama"
                   value={v.nama}
                   onChange={set('nama')}
-                  maxLength={80}
+                  placeholder="Contoh: Budi Santoso / Toko Berkah"
                   autoComplete="name"
-                  aria-describedby={err.nama ? 'nama-err' : undefined}
-                  aria-invalid={!!err.nama}
-                  placeholder="Nama Anda"
+                  required
                 />
               </Field>
 
-              <Field id="minat" label="Minat kemitraan">
+              <Field id="minat" label="Pilihan Minat Kemitraan *">
                 <select id="minat" value={v.minat} onChange={set('minat')}>
-                  {MINAT.map(([k, t]) => <option key={k} value={k}>{t}</option>)}
+                  {MINAT.map(([val, label]) => (
+                    <option key={val} value={val}>{label}</option>
+                  ))}
                 </select>
               </Field>
 
-              <Field id="wilayah" label="Wilayah">
-                <select id="wilayah" value={v.wilayah} onChange={set('wilayah')}>
-                  {WILAYAH.map(([w]) => <option key={w}>{w}</option>)}
-                </select>
-              </Field>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <Field id="wilayah" label="Wilayah Hotline">
+                  <select id="wilayah" value={v.wilayah} onChange={set('wilayah')}>
+                    {WILAYAH.map(([w]) => (
+                      <option key={w} value={w}>{w}</option>
+                    ))}
+                  </select>
+                </Field>
 
-              <Field id="kota" label="Kota / kecamatan *" error={err.kota}>
-                <input
-                  id="kota"
-                  value={v.kota}
-                  onChange={set('kota')}
-                  maxLength={80}
-                  autoComplete="address-level2"
-                  aria-describedby={err.kota ? 'kota-err' : undefined}
-                  aria-invalid={!!err.kota}
-                  placeholder="Contoh: Bekasi Barat, Depok Timur"
-                />
-              </Field>
+                <Field id="kota" label="Kota / Kecamatan *" error={err.kota}>
+                  <input
+                    id="kota"
+                    value={v.kota}
+                    onChange={set('kota')}
+                    placeholder="Contoh: Jatisampurna, Bekasi"
+                    required
+                  />
+                </Field>
+              </div>
 
-              <Field id="catatan" label="Catatan tambahan (opsional)">
+              <Field id="catatan" label="Rincian Kebutuhan / Catatan (Opsional)">
                 <textarea
                   id="catatan"
                   rows="3"
                   value={v.catatan}
                   onChange={set('catatan')}
-                  maxLength={400}
-                  placeholder="Informasi tambahan yang ingin Anda sampaikan..."
+                  placeholder="Tuliskan estimasi volume, pertanyaan, atau rincian usaha Anda..."
                 />
               </Field>
 
-              <button className="btn btn-red btn-lg" type="submit" style={{ width: '100%' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ flexShrink: 0 }}>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Lanjut ke WhatsApp
+              <button
+                type="submit"
+                className="btn btn-red btn-lg"
+                style={{ width: '100%', marginTop: '.8rem' }}
+              >
+                Lanjut ke WhatsApp →
               </button>
-
-              <p style={{ fontSize: '.82rem', color: 'var(--muted)', textAlign: 'center' }}>
-                Anda akan diarahkan ke WhatsApp dengan pesan yang sudah terisi otomatis.
-              </p>
             </form>
           </Reveal>
         </div>

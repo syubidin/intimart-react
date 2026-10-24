@@ -18,7 +18,7 @@ const PROD_PHOTOS = {
   'Alat & cairan kebersihan rumah': 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&fm=webp&q=80',
   'Bumbu keperluan dapur': 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&fm=webp&q=80',
   'Makanan instan': 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=600&fm=webp&q=80',
-  'Minuman kemasan': 'https://images.unsplash.com/photo-1625772452859-1c03d884dcd7?w=600&fm=webp&q=80',
+  'Minuman kemasan': '/images/minuman-kemasan.webp',
   'Snacks': 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600&fm=webp&q=80',
   // Metamart - ATK
   'Tas': 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&fm=webp&q=80',
@@ -29,7 +29,7 @@ const PROD_PHOTOS = {
   'Pernak-pernik': 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&fm=webp&q=80',
   'Mainan anak-anak': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&fm=webp&q=80',
   // MetaGrow
-  'Beras Super SLYP': 'https://images.unsplash.com/photo-1536304993881-ff86e0c9e4a5?w=600&fm=webp&q=80',
+  'Beras Super SLYP': '/images/beras-slyp.webp',
   'Telur Ayam berkualitas (Khas Blitar)': 'https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=600&fm=webp&q=80',
   'Telur Puyuh berkualitas': 'https://images.unsplash.com/photo-1582655299221-2b6bff351df0?w=600&fm=webp&q=80',
   'Susu UHT': 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&fm=webp&q=80',
@@ -62,7 +62,7 @@ export const LINES = [
     agent: true,
   },
   {
-    slug: 'metafashion', name: 'MetaFashion', tag: 'Fesyen', color: 'blue',
+    slug: 'metafashion', name: 'MetaFashion', tag: 'Fesyen', color: 'fashion',
     logo: '/images/logo-metafashion.webp', photo: '/images/photo-fashion.webp',
     desc: 'Menyediakan pilihan pakaian ex-import berkualitas dan aksesoris pelengkap pilihan.',
     groups: [{ title: 'Produk yang kami sediakan', items: ['Atasan Kemeja Pria & Wanita', 'Casual T-shirt', 'Blus Wanita', 'Dress Wanita', 'Pakaian Olahraga Pria & Wanita', 'Jaket', 'Aksesoris'] }],
@@ -97,9 +97,17 @@ export const LEGAL = [
 ];
 
 export const PARTNERS = [
-  'PT. Intiperta Elang Perkasa (Retailer)', 'PT. Haidar Aditama Perdana (Retailer)', 'PT. Intihuma Elang Perkasa (Property Development)',
-  'PT. Intimedcos Elang Perkasa', 'PT. Intivesta Elang Perkasa', 'Dapur Atlet Ragunan Jakarta Selatan', 'Dapur SPPG Kota Depok',
-  'Dapur SPPG Kab. Purwakarta', 'Koperasi Merah Putih Bekasi & Cibubur', 'Gendhis Catering', 'Pasar Parung Bogor',
+  { name: 'PT. Intiperta Elang Perkasa', type: 'Retailer', tag: 'Mitra Retail' },
+  { name: 'PT. Haidar Aditama Perdana', type: 'Retailer', tag: 'Mitra Retail' },
+  { name: 'PT. Intihuma Elang Perkasa', type: 'Property Development', tag: 'Properti & Kawasan' },
+  { name: 'PT. Intimedcos Elang Perkasa', type: 'Cosmetics & Health', tag: 'Kesehatan & Kosmetik' },
+  { name: 'PT. Intivesta Elang Perkasa', type: 'Investment & Finance', tag: 'Investasi & Bisnis' },
+  { name: 'Dapur Atlet Ragunan', type: 'Jakarta Selatan', tag: 'Dapur Institusi' },
+  { name: 'Dapur SPPG', type: 'Kota Depok', tag: 'Dapur Institusi' },
+  { name: 'Dapur SPPG', type: 'Kab. Purwakarta', tag: 'Dapur Institusi' },
+  { name: 'Koperasi Merah Putih', type: 'Bekasi & Cibubur', tag: 'Koperasi Karyawan' },
+  { name: 'Gendhis Catering', type: 'Katering Komersial', tag: 'Kuliner & Horeka' },
+  { name: 'Pasar Parung Bogor', type: 'Sentra Sembako', tag: 'Distribusi Pangan' },
 ];
 
 export const AREAS = ['Purwakarta', 'Depok', 'Bekasi', 'Cikarang'];
