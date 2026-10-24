@@ -12,7 +12,7 @@
 
 **Website company profile modern untuk PT Intimart Elang Perkasa — bagian dari I.W. Group**
 
-[🌐 Live Demo](https://intimart.vercel.app) · [📧 Kontak](mailto:ptintimartelangperkasa@gmail.com) · [💬 WhatsApp](https://wa.me/6285788485400)
+[🌐 Live Demo](https://intimart.vercel.app)
 
 </div>
 
