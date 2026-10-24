@@ -1,0 +1,27 @@
+{
+  "name": "intimart-company-profile",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "audit": "npm audit --omit=dev"
+  },
+  "dependencies": {
+    "@fontsource-variable/outfit": "^5.1.0",
+    "animejs": "^4.0.0",
+    "nodemailer": "^10.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^8.3.5"
+  }
+}
