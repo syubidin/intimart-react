@@ -7,13 +7,42 @@
 
 [![Vercel Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
 [![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-8-646cff?style=flat-square&logo=vite)](https://vite.dev)
+[![Vite](https://img.shields.io/badge/Vite-6-646cff?style=flat-square&logo=vite)](https://vite.dev)
 [![anime.js](https://img.shields.io/badge/anime.js-4-ff69b4?style=flat-square)](https://animejs.com)
 
 **Website company profile modern untuk PT Intimart Elang Perkasa — bagian dari I.W. Group**
 
 [🌐 Live Demo](https://intimart.vercel.app) · [📧 Kontak](mailto:ptintimartelangperkasa@gmail.com) · [💬 WhatsApp](https://wa.me/6285788485400)
 
+</div>
+
+---
+
+## 📸 Preview Tampilan
+
+### 1. Halaman Beranda (`/`)
+> *Desain hero modern sesuai company profile, statistik interaktif count-up, lini bisnis, dan daftar mitra resmi.*
+
+<div align="center">
+  <img src="public/images/screenshots/home.png" alt="Preview Halaman Beranda" width="100%" />
+</div>
+
+<br/>
+
+### 2. Katalog Produk & Pencarian Real-Time (`/produk`)
+> *Katalog produk terstruktur dengan filter kategori per lini bisnis, pencarian instan, dan integrasi WhatsApp.*
+
+<div align="center">
+  <img src="public/images/screenshots/product.png" alt="Preview Halaman Produk" width="100%" />
+</div>
+
+<br/>
+
+### 3. Halaman Program Kemitraan (`/mitra`)
+> *Formulir kemitraan multi-lini bisnis dengan validasi interaktif dan direct template WhatsApp.*
+
+<div align="center">
+  <img src="public/images/screenshots/mitra.png" alt="Preview Halaman Kemitraan" width="100%" />
 </div>
 
 ---
