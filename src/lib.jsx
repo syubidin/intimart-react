@@ -15,12 +15,18 @@ export const useTitle = (t) =>
       : 'PT Intimart Elang Perkasa | Metamart, MetaGrow & MetaFashion';
   }, [t]);
 
-// Smooth parallax scrolling hook
+// Smooth parallax scrolling hook (desktop/tablet only to avoid mobile overlapping)
 export function useParallax() {
   useEffect(() => {
     if (reduced()) return;
     let rafId = 0;
     const handleScroll = () => {
+      if (window.innerWidth < 860) {
+        document.querySelectorAll('[data-parallax]').forEach((el) => {
+          el.style.transform = 'none';
+        });
+        return;
+      }
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
         const scrolled = window.scrollY;
@@ -36,8 +42,11 @@ export function useParallax() {
       });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
       cancelAnimationFrame(rafId);
     };
   }, []);

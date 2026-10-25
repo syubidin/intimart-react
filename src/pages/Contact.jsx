@@ -35,6 +35,7 @@ export default function Contact() {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (st.s === 'sending') return;
     const er = {};
     if (v.name.trim().length < 2) er.name = 'Nama minimal 2 karakter.';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email.trim())) er.email = 'Format email tidak valid.';
@@ -46,7 +47,14 @@ export default function Contact() {
       const r = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(v),
+        body: JSON.stringify({
+          ...v,
+          name: v.name.trim(),
+          email: v.email.trim(),
+          phone: v.phone.trim(),
+          subject: v.subject.trim(),
+          message: v.message.trim(),
+        }),
       });
       const d = await r.json().catch(() => ({}));
       if (!r.ok || !d.ok) throw new Error(d.error || 'Pesan gagal dikirim.');
@@ -91,6 +99,64 @@ export default function Contact() {
               </p>
               <div style={{ borderTop: '1px solid rgba(255,255,255,.15)', paddingTop: '.8rem', fontSize: '.82rem', color: 'rgba(255,255,255,.7)' }}>
                 Jam Operasional: Senin – Sabtu, 08.00 – 17.00 WIB
+              </div>
+            </Reveal>
+
+            {/* Visual Hotline Card in Hero */}
+            <Reveal>
+              <div style={{
+                background: '#ffffff',
+                color: 'var(--ink)',
+                border: '2px solid rgba(255,255,255,.9)',
+                borderRadius: 24,
+                padding: 'clamp(1.5rem, 3.5vw, 2rem)',
+                boxShadow: '0 24px 60px rgba(0,0,0,.25)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.2rem',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '.5rem' }}>
+                  <span style={{
+                    background: 'var(--soft)',
+                    color: 'var(--blue)',
+                    fontWeight: 800,
+                    fontSize: '.8rem',
+                    padding: '.35rem .9rem',
+                    borderRadius: 999,
+                    textTransform: 'uppercase',
+                    letterSpacing: '.05em',
+                  }}>
+                    Layanan Respons Cepat
+                  </span>
+                  <span style={{ fontSize: '.84rem', color: 'var(--green-d)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '.4rem' }}>
+                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--green)', display: 'inline-block' }} />
+                    Online Jam Kerja
+                  </span>
+                </div>
+
+                <div>
+                  <b style={{ color: 'var(--ink)', fontSize: '1.2rem', display: 'block', marginBottom: '.35rem' }}>
+                    Butuh Tanggapan Langsung?
+                  </b>
+                  <p style={{ color: 'var(--muted)', fontSize: '.92rem', lineHeight: 1.6, margin: 0 }}>
+                    Customer service kami siap melayani pertanyaan seputar program kemitraan, harga grosir sembako, dan pasokan toko Anda.
+                  </p>
+                </div>
+
+                <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: '.6rem' }}>
+                  <a
+                    href={waLink(CONTACT.phones[0].wa, 'Halo Intimart, saya butuh informasi atau konsultasi cepat.')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-green"
+                    style={{ width: '100%', justifyContent: 'center' }}
+                  >
+                    Chat WhatsApp Customer Service →
+                  </a>
+                  <span style={{ textAlign: 'center', fontSize: '.8rem', color: 'var(--muted)' }}>
+                    Rata-rata respons 5–15 menit pada jam operasional
+                  </span>
+                </div>
               </div>
             </Reveal>
           </div>

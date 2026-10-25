@@ -161,7 +161,7 @@ export default function Home() {
               <Link to="/kontak" className="btn btn-ghost-w btn-lg">Hubungi Kantor</Link>
             </div>
           </Reveal>
-          <Reveal className="frame" data-parallax="-0.04">
+          <Reveal className="frame">
             <img
               src="/images/photo-basket.webp"
               alt="Keranjang belanja berisi sayur dan kebutuhan harian"
@@ -173,8 +173,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== MITRA & KLIEN (List Partner Cards) ===== */}
-      <section className="wrap">
+      {/* ===== MITRA & KLIEN (Professional Infinite Marquee) ===== */}
+      <section className="wrap" style={{ overflow: 'hidden' }}>
         <Reveal>
           <p className="eyebrow">Our Partners &amp; Clients</p>
           <h2>Dipercaya bisnis, retailer, dan dapur komunitas.</h2>
@@ -182,22 +182,24 @@ export default function Home() {
             Jaringan kemitraan terpercaya yang telah tumbuh bersama PT Intimart Elang Perkasa di berbagai sektor.
           </p>
         </Reveal>
-        <Reveal stag className="partners-grid">
-          {PARTNERS.map((p) => (
-            <div className="partner-card" key={p.name}>
-              <div className="partner-badge" aria-hidden="true">
-                <BuildingIcon />
+        <div className="partner-marquee-container" aria-label="Daftar mitra dan klien PT Intimart Elang Perkasa">
+          <div className="partner-marquee-track">
+            {[...PARTNERS, ...PARTNERS].map((p, i) => (
+              <div className="partner-marquee-item" key={`${p.name}-${i}`}>
+                <div className="partner-badge" aria-hidden="true">
+                  <BuildingIcon />
+                </div>
+                <div className="partner-info">
+                  <b>{p.name}</b>
+                  <span>
+                    <span className="partner-tag">{p.tag}</span>
+                    {p.type}
+                  </span>
+                </div>
               </div>
-              <div className="partner-info">
-                <b>{p.name}</b>
-                <span>
-                  <span className="partner-tag">{p.tag}</span>
-                  {p.type}
-                </span>
-              </div>
-            </div>
-          ))}
-        </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ===== CTA MITRA ===== */}

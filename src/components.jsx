@@ -89,9 +89,10 @@ export function Layout() {
             <Wordmark small />
           </Link>
           <button
-            className="burger"
+            className={`burger${open ? ' active' : ''}`}
             aria-expanded={open}
             aria-controls="menu"
+            aria-label="Toggle navigation menu"
             onClick={() => setOpen(!open)}
           >
             <span className="sr">Menu</span>
@@ -103,6 +104,7 @@ export function Layout() {
                 key={to}
                 to={to}
                 end={to === '/'}
+                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   isActive || (to.startsWith('/bisnis') && pathname.startsWith('/bisnis')) ? 'active' : ''
                 }
@@ -110,7 +112,9 @@ export function Layout() {
                 {t}
               </NavLink>
             ))}
-            <Link to="/mitra" className="btn btn-red">Jadi Mitra</Link>
+            <Link to="/mitra" className="btn btn-red" onClick={() => setOpen(false)}>
+              Jadi Mitra →
+            </Link>
           </nav>
         </div>
       </header>

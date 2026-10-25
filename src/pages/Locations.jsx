@@ -53,6 +53,85 @@ export default function Locations() {
               </a>
             </div>
           </Reveal>
+
+          {/* Responsive Visual Card */}
+          <Reveal>
+            <div style={{
+              background: '#ffffff',
+              border: '1.5px solid var(--border)',
+              borderRadius: 24,
+              padding: 'clamp(1.5rem, 3.5vw, 2rem)',
+              boxShadow: 'var(--shadow-lg)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.2rem',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '.5rem' }}>
+                <span style={{
+                  background: 'var(--soft)',
+                  color: 'var(--blue)',
+                  fontWeight: 800,
+                  fontSize: '.8rem',
+                  padding: '.35rem .9rem',
+                  borderRadius: 999,
+                  textTransform: 'uppercase',
+                  letterSpacing: '.04em',
+                }}>
+                  Pusat Operasional &amp; Logistik
+                </span>
+                <span style={{ fontSize: '.84rem', color: 'var(--green-d)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '.4rem' }}>
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--green)', display: 'inline-block' }} />
+                  Buka Setiap Hari Kerja
+                </span>
+              </div>
+
+              <div>
+                <b style={{ fontSize: '1.2rem', color: 'var(--ink)', display: 'block', marginBottom: '.35rem' }}>
+                  Head Office &amp; Jaringan Distribusi
+                </b>
+                <p style={{ color: 'var(--muted)', fontSize: '.92rem', lineHeight: 1.6, margin: 0 }}>
+                  Terhubung langsung dengan jalur logistik utama untuk menjamin pasokan sembako dan kebutuhan retail sampai tepat waktu ke toko dan mitra Anda.
+                </p>
+              </div>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '.8rem',
+                borderTop: '1px solid var(--border)',
+                paddingTop: '1rem',
+              }}>
+                <div style={{ background: 'var(--soft)', borderRadius: 14, padding: '.8rem 1rem' }}>
+                  <b style={{ color: 'var(--blue)', fontSize: '1.3rem', display: 'block', lineHeight: 1 }}>7+</b>
+                  <span style={{ fontSize: '.8rem', color: 'var(--muted)', fontWeight: 600 }}>Wilayah Layanan</span>
+                </div>
+                <div style={{ background: 'var(--soft)', borderRadius: 14, padding: '.8rem 1rem' }}>
+                  <b style={{ color: 'var(--green-d)', fontSize: '1.3rem', display: 'block', lineHeight: 1 }}>100%</b>
+                  <span style={{ fontSize: '.8rem', color: 'var(--muted)', fontWeight: 600 }}>Terkontrol Armada Logistik</span>
+                </div>
+              </div>
+
+              <a
+                href={CONTACT.mapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '.5rem',
+                  color: 'var(--blue)',
+                  fontWeight: 700,
+                  fontSize: '.92rem',
+                  textDecoration: 'none',
+                  padding: '.4rem 0 0',
+                }}
+              >
+                <span>Lihat Titik Peta Google Maps</span>
+                <span>→</span>
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 

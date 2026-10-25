@@ -91,22 +91,20 @@ export default function Partner() {
               </p>
             </Reveal>
 
-            {/* Visual Hero Card */}
+            {/* Visual Hero Card - High Contrast & Prominent */}
             <Reveal>
               <div style={{
-                background: 'rgba(255,255,255,.12)',
-                border: '1.5px solid rgba(255,255,255,.22)',
+                background: '#ffffff',
+                border: '2px solid rgba(255,255,255,.9)',
                 borderRadius: 24,
-                padding: '1.8rem 2rem',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                color: '#fff',
-                boxShadow: 'var(--shadow-xl)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.2rem)',
+                color: 'var(--ink)',
+                boxShadow: '0 24px 60px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.2)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1.2rem',
+                gap: '1.25rem',
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '.5rem' }}>
                   <span style={{
                     background: 'var(--yellow)',
                     color: 'var(--blue-d)',
@@ -119,31 +117,68 @@ export default function Partner() {
                   }}>
                     Peluang Usaha Terbuka
                   </span>
-                  <span style={{ fontSize: '.85rem', color: '#fff', fontWeight: 700 }}>
+                  <span style={{
+                    fontSize: '.85rem',
+                    color: 'var(--green-d)',
+                    fontWeight: 700,
+                    background: '#edfff3',
+                    border: '1px solid #8ce2a6',
+                    padding: '.3rem .8rem',
+                    borderRadius: 999,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '.35rem',
+                  }}>
+                    <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--green)', display: 'inline-block' }} />
                     100+ Mitra Aktif
                   </span>
                 </div>
+
                 <div>
-                  <b style={{ color: '#fff', fontSize: '1.18rem', display: 'block', marginBottom: '.3rem' }}>
+                  <b style={{ color: 'var(--ink)', fontSize: '1.3rem', display: 'block', marginBottom: '.35rem' }}>
                     Sinergi Multi-Lini Bisnis
                   </b>
-                  <p style={{ color: 'rgba(255,255,255,.85)', fontSize: '.92rem', margin: 0, lineHeight: 1.6 }}>
-                    Dukungan pasokan teratur dengan keuntungan kompetitif, garansi kualitas, dan pembinaan bisnis berkelanjutan.
+                  <p style={{ color: 'var(--muted)', fontSize: '.93rem', margin: 0, lineHeight: 1.65 }}>
+                    Dukungan pasokan teratur dengan harga grosir langsung dari produsen, jaminan mutu stok, dan pembinaan bisnis berkelanjutan.
                   </p>
                 </div>
-                <div style={{ display: 'flex', gap: '.6rem', flexWrap: 'wrap' }}>
+
+                <div style={{ display: 'flex', gap: '.55rem', flexWrap: 'wrap' }}>
                   {LINES.map((l) => (
                     <span key={l.slug} style={{
-                      background: 'rgba(255,255,255,.15)',
-                      padding: '.3rem .8rem',
+                      background: 'var(--soft)',
+                      border: '1px solid var(--border)',
+                      padding: '.35rem .85rem',
                       borderRadius: 999,
                       fontSize: '.82rem',
                       fontWeight: 700,
-                      color: '#fff',
+                      color: 'var(--blue)',
                     }}>
                       ✓ {l.name}
                     </span>
                   ))}
+                </div>
+
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '.6rem',
+                  borderTop: '1px solid var(--border)',
+                  paddingTop: '1rem',
+                  textAlign: 'center',
+                }}>
+                  <div style={{ background: 'var(--soft)', borderRadius: 12, padding: '.6rem .3rem' }}>
+                    <b style={{ color: 'var(--blue)', fontSize: '1.05rem', display: 'block' }}>Grosir</b>
+                    <span style={{ fontSize: '.72rem', color: 'var(--muted)', fontWeight: 600 }}>Produsen</span>
+                  </div>
+                  <div style={{ background: 'var(--soft)', borderRadius: 12, padding: '.6rem .3rem' }}>
+                    <b style={{ color: 'var(--green-d)', fontSize: '1.05rem', display: 'block' }}>Terjadwal</b>
+                    <span style={{ fontSize: '.72rem', color: 'var(--muted)', fontWeight: 600 }}>Logistik Rutin</span>
+                  </div>
+                  <div style={{ background: 'var(--soft)', borderRadius: 12, padding: '.6rem .3rem' }}>
+                    <b style={{ color: 'var(--red)', fontSize: '1.05rem', display: 'block' }}>Cepat</b>
+                    <span style={{ fontSize: '.72rem', color: 'var(--muted)', fontWeight: 600 }}>Daftar via WA</span>
+                  </div>
                 </div>
               </div>
             </Reveal>

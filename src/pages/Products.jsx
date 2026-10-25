@@ -92,18 +92,82 @@ export default function Products() {
   return (
     <>
       {/* Header */}
-      <section className="wrap" style={{ paddingBottom: '1rem' }}>
-        <Reveal>
-          <p className="eyebrow">Katalog Produk</p>
-          <h1>Produk Kami</h1>
-          <p className="lead">
-            Pilih produk lalu pesan langsung lewat WhatsApp. Tim kami bantu cek ketersediaan,
-            harga, dan pengiriman.
-          </p>
-        </Reveal>
+      <section className="wrap" style={{ paddingBottom: '1rem', paddingTop: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+        <div className="split top">
+          <Reveal>
+            <p className="eyebrow">Katalog Produk</p>
+            <h1>Produk Kami</h1>
+            <p className="lead">
+              Pilih produk dari katalog 3 lini bisnis PT Intimart Elang Perkasa lalu pesan langsung lewat WhatsApp. Tim kami bantu cek ketersediaan stok, harga grosir, dan jadwal pengiriman.
+            </p>
+          </Reveal>
+
+          {/* Responsive Visual Card in Products Hero */}
+          <Reveal>
+            <div style={{
+              background: '#ffffff',
+              border: '1.5px solid var(--border)',
+              borderRadius: 24,
+              padding: 'clamp(1.4rem, 3vw, 1.8rem)',
+              boxShadow: 'var(--shadow-lg)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '.5rem' }}>
+                <span style={{
+                  background: 'var(--soft)',
+                  color: 'var(--blue)',
+                  fontWeight: 800,
+                  fontSize: '.78rem',
+                  padding: '.35rem .85rem',
+                  borderRadius: 999,
+                  textTransform: 'uppercase',
+                  letterSpacing: '.04em',
+                }}>
+                  Pemesanan Cepat &amp; Mudah
+                </span>
+                <span style={{ fontSize: '.84rem', color: 'var(--blue)', fontWeight: 700 }}>
+                  24+ Pilihan Produk
+                </span>
+              </div>
+
+              <div>
+                <b style={{ fontSize: '1.12rem', color: 'var(--ink)', display: 'block', marginBottom: '.3rem' }}>
+                  Katalog Terpadu Multi-Lini
+                </b>
+                <p style={{ color: 'var(--muted)', fontSize: '.88rem', lineHeight: 1.55, margin: 0 }}>
+                  Telur segar &amp; sembako dari <strong>MetaGrow</strong>, kebutuhan harian &amp; ATK dari <strong>Metamart</strong>, serta pakaian ex-import dari <strong>MetaFashion</strong>.
+                </p>
+              </div>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '.6rem',
+                borderTop: '1px solid var(--border)',
+                paddingTop: '.9rem',
+                textAlign: 'center',
+              }}>
+                <div style={{ background: 'var(--soft)', borderRadius: 12, padding: '.6rem .4rem' }}>
+                  <b style={{ color: 'var(--blue)', fontSize: '1rem', display: 'block' }}>Grosir</b>
+                  <span style={{ fontSize: '.75rem', color: 'var(--muted)', fontWeight: 600 }}>&amp; Retail</span>
+                </div>
+                <div style={{ background: 'var(--soft)', borderRadius: 12, padding: '.6rem .4rem' }}>
+                  <b style={{ color: 'var(--green-d)', fontSize: '1rem', display: 'block' }}>100%</b>
+                  <span style={{ fontSize: '.75rem', color: 'var(--muted)', fontWeight: 600 }}>Mutu Terjamin</span>
+                </div>
+                <div style={{ background: 'var(--soft)', borderRadius: 12, padding: '.6rem .4rem' }}>
+                  <b style={{ color: 'var(--red)', fontSize: '1rem', display: 'block' }}>Rutin</b>
+                  <span style={{ fontSize: '.75rem', color: 'var(--muted)', fontWeight: 600 }}>Pengiriman</span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
 
         {/* Filter tabs */}
-        <div className="tabs" role="group" aria-label="Filter lini bisnis">
+        <div className="tabs" role="group" aria-label="Filter lini bisnis" style={{ marginTop: '2rem' }}>
           {[{ slug: 'all', name: 'Semua Produk', logo: null }, ...LINES].map((l) => (
             <button
               key={l.slug}
