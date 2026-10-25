@@ -183,61 +183,6 @@ export default function About() {
         </Reveal>
       </section>
 
-      {/* Company Profile PDF Download Card */}
-      <section className="wrap">
-        <Reveal>
-          <div className="compro-card">
-            <div className="compro-card-info">
-              <span className="compro-badge">
-                <span aria-hidden="true" />
-                Dokumen Resmi Perusahaan
-              </span>
-              <h3>Unduh Company Profile Lengkap</h3>
-              <p>
-                Dapatkan informasi resmi dan komprehensif mengenai profil PT Intimart Elang Perkasa,
-                struktur I.W. Group, legalitas hukum, serta portofolio unit bisnis <strong>Metamart</strong>,{' '}
-                <strong>MetaGrow</strong>, dan <strong>MetaFashion</strong> dalam format PDF siap cetak.
-              </p>
-              <div className="compro-specs">
-                <span className="compro-spec-pill">
-                  <FilePdfIcon /> Format PDF Resmi
-                </span>
-                <span className="compro-spec-pill">
-                  ⚡ Ukuran: ~2.8 MB
-                </span>
-                <span className="compro-spec-pill">
-                  📅 Edisi Resmi 2025/2026
-                </span>
-              </div>
-            </div>
-
-            <div className="compro-actions">
-              <a
-                href="/docs/Company-Profile-PT-Intimart-Elang-Perkasa.pdf"
-                download="Company-Profile-PT-Intimart-Elang-Perkasa.pdf"
-                className="btn btn-red btn-lg"
-                style={{ gap: '.6rem' }}
-                aria-label="Unduh Company Profile PT Intimart Elang Perkasa format PDF"
-              >
-                <DownloadIcon />
-                <span>Unduh PDF Sekarang</span>
-              </a>
-              <a
-                href="/docs/Company-Profile-PT-Intimart-Elang-Perkasa.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-ghost btn-lg"
-                style={{ gap: '.5rem' }}
-                aria-label="Buka Company Profile di tab browser baru"
-              >
-                <span>Buka di Tab Baru</span>
-                <ExternalLinkIcon />
-              </a>
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* Team */}
       <section className="wrap">
         <Reveal>
