@@ -761,6 +761,114 @@ section.blue h1, section.blue h2, section.blue h3, section.blue h4 {
 .seal.s0 { background: var(--yellow); color: var(--blue-d); }
 .seal.s1 { background: var(--blue); color: #fff; }
 
+/* ===== COMPANY PROFILE DOWNLOAD CARD ===== */
+.compro-card {
+  background: linear-gradient(135deg, #ffffff 0%, var(--soft) 100%);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: clamp(2rem, 5vw, 3.2rem);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 3.5rem 0 2rem;
+}
+.compro-card::before {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(229,51,42,.12), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.compro-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.compro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: #fff0ef;
+  color: var(--red);
+  border: 1px solid rgba(229,51,42,.2);
+  border-radius: 999px;
+  padding: .35rem .95rem;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.compro-badge span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+.compro-card h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--ink);
+  line-height: 1.25;
+  margin: 0;
+}
+.compro-card p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 58ch;
+  margin: 0;
+}
+.compro-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: .4rem;
+}
+.compro-spec-pill {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: .3rem .85rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+.compro-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  flex-shrink: 0;
+  min-width: 230px;
+}
+@media (max-width: 860px) {
+  .compro-card {
+    grid-template-columns: 1fr;
+    padding: 1.8rem 1.4rem;
+    gap: 1.5rem;
+  }
+  .compro-actions {
+    flex-direction: column;
+    width: 100%;
+    min-width: auto;
+  }
+  .compro-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ===== BUSINESS TABS ===== */
 .tabs {
   display: flex;
