@@ -55,8 +55,10 @@ export function useParallax() {
 // Muncul saat di-scroll (anime.js + IntersectionObserver). stag = animasikan anak-anaknya berurutan.
 export function Reveal({ as: Tag = 'div', stag = false, className = '', children, ...p }) {
   const ref = useRef(null);
+  const animatedRef = useRef(false);
 
   useEffect(() => {
+    if (animatedRef.current) return;
     const el = ref.current;
     if (!el) return;
     const targets = stag ? Array.from(el.children) : [el];
@@ -66,12 +68,14 @@ export function Reveal({ as: Tag = 'div', stag = false, className = '', children
         t.style.opacity = '1';
         t.style.transform = 'none';
       });
+      animatedRef.current = true;
       return;
     }
 
-    // Check if element is already within the viewport on mount/update
+    // Check if element is already within the viewport on mount
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+      animatedRef.current = true;
       animate(targets, {
         opacity: [0, 1],
         translateY: [24, 0],
@@ -84,7 +88,8 @@ export function Reveal({ as: Tag = 'div', stag = false, className = '', children
 
     const io = new IntersectionObserver(
       ([e]) => {
-        if (!e.isIntersecting) return;
+        if (!e.isIntersecting || animatedRef.current) return;
+        animatedRef.current = true;
         animate(targets, {
           opacity: [0, 1],
           translateY: [32, 0],
@@ -99,7 +104,7 @@ export function Reveal({ as: Tag = 'div', stag = false, className = '', children
 
     io.observe(el);
     return () => io.disconnect();
-  }, [stag, children]);
+  }, [stag]);
 
   return (
     <Tag ref={ref} className={`reveal${stag ? ' kids' : ''} ${className}`} {...p}>

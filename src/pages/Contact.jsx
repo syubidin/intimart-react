@@ -31,7 +31,10 @@ export default function Contact() {
   const [v, setV] = useState(EMPTY);
   const [err, setErr] = useState({});
   const [st, setSt] = useState({ s: 'idle', m: '' });
-  const set = (k) => (e) => setV({ ...v, [k]: e.target.value });
+  const set = (k) => (e) => {
+    const val = e.target.value;
+    setV((prev) => ({ ...prev, [k]: val }));
+  };
 
   const submit = async (e) => {
     e.preventDefault();

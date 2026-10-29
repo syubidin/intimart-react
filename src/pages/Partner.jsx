@@ -48,7 +48,10 @@ export default function Partner() {
   const pre = MINAT.some(([k]) => k === sp.get('minat')) ? sp.get('minat') : 'metagrow-agen';
   const [v, setV] = useState({ nama: '', minat: pre, wilayah: 'Jabodetabek', kota: '', catatan: '' });
   const [err, setErr] = useState({});
-  const set = (k) => (e) => setV({ ...v, [k]: e.target.value });
+  const set = (k) => (e) => {
+    const val = e.target.value;
+    setV((prev) => ({ ...prev, [k]: val }));
+  };
 
   const submit = (e) => {
     e.preventDefault();
